@@ -1,0 +1,183 @@
+/* GENERALS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+    color: #fff;
+    background-color: rgb(51, 135, 204);
+}
+
+/* Layout */
+#app {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* HEADER */
+.app-header h1 {
+    margin: 30px 0;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* New Todo */
+.new-todo {
+    display: flex;
+}
+
+.new-todo input,
+new-todo button {
+    height: 35px;
+    border: 0;
+    outline: none;
+}
+
+.new-todo input {
+    flex-grow: 1;
+    margin-right: 20px;
+    border-bottom: 1px solid #ccc;
+    transition: border .4s
+}
+
+input:hover,
+input:focus {
+    border-color: #000;
+}
+
+.new-todo button {
+    padding: 0 30px;
+    text-transform: uppercase;
+    font-size: 12px;
+    background: dodgerblue;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.new-todo button:hover,
+.new-todo button:focus {
+    background: #ccc
+}
+
+/* TODO LIST */
+.todo-container {
+    margin: 40px 0;
+    padding: 15px 30px;
+    border-radius: 10px;
+    background: dodgerblue;
+    box-shadow: 0 15px 10px -10px rgba(0,0,0, .2);
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.todo:last-child {
+    border-bottom: none;
+}
+
+.todo i.fa-times {
+    margin-left: 15px;
+}
+
+.todo i.fa-times:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.todo i.fa-pen:hover {
+    color: blue;
+    cursor: pointer;
+}
+
+.todo-container h2 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Completed */
+.todo .text.completed {
+    text-decoration: line-through;
+}
+
+.todo .text {
+    position: relative;
+    padding: 0 30px;
+}
+.todo .text::before {
+    content: '';
+    position:absolute;
+    top: 2px;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #000;
+}
+
+.todo .text.completed::before {
+    background: forestgreen;
+}
+
+/* Edit Modal */
+.edit-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0, .75);
+}
+
+.edit-modal h3 {
+    text-align: center;
+}
+
+.edit-modal .content input,
+.edit-modal .content button {
+    margin-top: 10px;
+    height: 25px;
+    outline: none;
+    border: 0;
+}
+
+.edit-modal input {
+    flex-grow: 1;
+    width: 200px;
+    border-bottom: 1px solid #ccc;
+    transition: border .4s
+}
+
+
+.edit-modal .content button {
+    padding: 0 15px;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 10px; 
+    color: #fff;
+    background: dodgerblue;
+    cursor: pointer;       
+}
+
+.content button.update {
+    margin-right: 50px;
+}
+
+.content button.update:hover {
+    background: forestgreen
+}
+
+.content button.close:hover {
+    background: red;
+}
+
